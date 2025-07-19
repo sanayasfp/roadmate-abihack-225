@@ -61,8 +61,8 @@ const TechOrientationForm = () => {
 
   if (showSummary) {
     return (
-      <div className="max-w-4xl mx-auto p-6 bg-white">
-        <div className="bg-orange-600 text-white p-6 rounded-lg mb-8">
+      <div className="max-w-4xl mx-auto p-6">
+        <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-6 rounded-lg mb-8">
           <h1 className="text-3xl font-bold mb-2">
             Récapitulatif de votre profil
           </h1>
@@ -73,8 +73,8 @@ const TechOrientationForm = () => {
 
         <div className="space-y-8">
           {/* Section 1 */}
-          <div className="bg-purple-50 p-6 rounded-lg">
-            <h2 className="text-2xl font-bold text-black mb-4">
+          <div className="bg-blue-50 p-6 rounded-lg">
+            <h2 className="text-2xl font-bold text-blue-800 mb-4">
               Section 1 : Intérêts et motivations générales
             </h2>
 
@@ -127,8 +127,8 @@ const TechOrientationForm = () => {
           </div>
 
           {/* Section 2 */}
-          <div className="bg-purple-50 p-6 rounded-lg">
-            <h2 className="text-2xl font-bold text-black mb-4">
+          <div className="bg-green-50 p-6 rounded-lg">
+            <h2 className="text-2xl font-bold text-green-800 mb-4">
               Section 2 : Préférences spécifiques à la Tech
             </h2>
 
@@ -182,7 +182,7 @@ const TechOrientationForm = () => {
 
           {/* Section 3 */}
           <div className="bg-purple-50 p-6 rounded-lg">
-            <h2 className="text-2xl font-bold text-black mb-4">
+            <h2 className="text-2xl font-bold text-purple-800 mb-4">
               Section 3 : Aptitudes et style de travail
             </h2>
 
@@ -229,7 +229,7 @@ const TechOrientationForm = () => {
         <div className="flex gap-4 mt-8">
           <button
             onClick={resetForm}
-            className="bg-orange-600 text-white px-8 py-3 rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-200 font-semibold"
+            className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-3 rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-200 font-semibold"
           >
             Recommencer le formulaire
           </button>
@@ -245,8 +245,8 @@ const TechOrientationForm = () => {
   }
 
   return (
-    <div className="max-w-4xl mx-auto p-6 bg-white">
-      <div className="bg-orange-600 text-white text-white p-6 rounded-lg mb-8">
+    <div className="max-w-4xl mx-auto p-6">
+      <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-6 rounded-lg mb-8">
         <h1 className="text-3xl font-bold mb-2">
           {"Formulaire d'Orientation Technologique"}
         </h1>
@@ -257,8 +257,8 @@ const TechOrientationForm = () => {
 
       <div className="space-y-8">
         {/* Section 1 */}
-        <div className="bg-purple-50 p-6 rounded-lg">
-          <h2 className="text-2xl font-bold text-slate-900 mb-6">
+        <div className="bg-blue-50 p-6 rounded-lg">
+          <h2 className="text-2xl font-bold text-blue-800 mb-6">
             Section 1 : Intérêts et motivations générales
           </h2>
 
@@ -355,8 +355,8 @@ const TechOrientationForm = () => {
         </div>
 
         {/* Section 2 */}
-        <div className="bg-purple-50 p-6 rounded-lg">
-          <h2 className="text-2xl font-bold text-slate-900 mb-6">
+        <div className="bg-green-50 p-6 rounded-lg">
+          <h2 className="text-2xl font-bold text-green-800 mb-6">
             Section 2 : Préférences spécifiques à la Tech
           </h2>
 
@@ -473,7 +473,7 @@ const TechOrientationForm = () => {
 
         {/* Section 3 */}
         <div className="bg-purple-50 p-6 rounded-lg">
-          <h2 className="text-2xl font-bold text-slate-900 mb-6">
+          <h2 className="text-2xl font-bold text-purple-800 mb-6">
             Section 3 : Aptitudes et style de travail
           </h2>
 
@@ -573,7 +573,7 @@ const TechOrientationForm = () => {
           <button
             type="button"
             onClick={handleSubmit}
-            className="bg-orange-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:from-blue-700 hover:to-purple-700 transform hover:scale-105 transition-all duration-200 shadow-lg"
+            className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:from-blue-700 hover:to-purple-700 transform hover:scale-105 transition-all duration-200 shadow-lg"
           >
             Voir mon récapitulatif
           </button>
