@@ -117,20 +117,22 @@ export const companies = [
     website: "https://www.lyceclassiqueabidjan.ci/",
     companyType: "Établissement d'enseignement",
     location: "Abidjan, Côte d'Ivoire",
-  }
+  },
 ];
 
 export const findCompanyIndexByName = (name: string) => {
-  return companies.findIndex((company) => company.name.toLowerCase() === name.toLowerCase());
+  return companies.findIndex(
+    (company) => company.name.toLowerCase() === name.toLowerCase()
+  );
 };
-
 
 export const projects = [
   {
     name: "Application de ticket de restaurant",
     owner: findCompanyIndexByName("Lycée Classique d'Abidjan"),
     ownerEntity: "companies",
-    description: "Dans le cadre de la construction de ça nouvelle quantine dont la livraison est prévue pour le 18 Aout 2026, la direction du Lycée Classique d'Abidjan souhaite mettre en place une application de ticket de restaurant pour faciliter la gestion des repas.",
+    description:
+      "Dans le cadre de la construction de ça nouvelle quantine dont la livraison est prévue pour le 18 Aout 2026, la direction du Lycée Classique d'Abidjan souhaite mettre en place une application de ticket de restaurant pour faciliter la gestion des repas.",
     lengthInWeeks: 26,
     requirements: [
       "Permettre aux élèves de commander des repas en ligne",
@@ -146,7 +148,8 @@ export const projects = [
     name: "Application de gestion de bibliothèque",
     owner: findCompanyIndexByName("ENSEA"),
     ownerEntity: "companies",
-    description: "L'ENSEA souhaite mettre en place une application de gestion de bibliothèque pour faciliter la gestion des livres et des emprunts.",
+    description:
+      "L'ENSEA souhaite mettre en place une application de gestion de bibliothèque pour faciliter la gestion des livres et des emprunts.",
     lengthInWeeks: 24,
     requirements: [
       "Permettre aux bibliothécaires de gérer les livres",
@@ -162,7 +165,8 @@ export const projects = [
     name: "Application de gestion de projet",
     owner: findCompanyIndexByName("Côte d'Ivoire Telecom"),
     ownerEntity: "companies",
-    description: "Côte d'Ivoire Telecom souhaite mettre en place une application de gestion de projet pour faciliter la gestion des projets en cours.",
+    description:
+      "Côte d'Ivoire Telecom souhaite mettre en place une application de gestion de projet pour faciliter la gestion des projets en cours.",
     lengthInWeeks: 36,
     requirements: [
       "Permettre aux chefs de projet de créer des projets",
@@ -178,7 +182,8 @@ export const projects = [
     name: "Application de gestion des ressources humaines",
     owner: findCompanyIndexByName("Orange Côte d'Ivoire"),
     ownerEntity: "companies",
-    description: "Orange Côte d'Ivoire souhaite mettre en place une application de gestion des ressources humaines pour faciliter la gestion des employés.",
+    description:
+      "Orange Côte d'Ivoire souhaite mettre en place une application de gestion des ressources humaines pour faciliter la gestion des employés.",
     lengthInWeeks: 40,
     requirements: [
       "Permettre aux RH de gérer les employés",
@@ -194,7 +199,8 @@ export const projects = [
     name: "Plateforme de Tracking de Mission",
     owner: findCompanyIndexByName("Children Of Africa"),
     ownerEntity: "companies",
-    description: "children of Africa souhaite mettre en place une plateforme de tracking des missions pour faciliter la gestion des missions humanitaires.",
+    description:
+      "children of Africa souhaite mettre en place une plateforme de tracking des missions pour faciliter la gestion des missions humanitaires.",
     requirements: [
       "Permettre aux admin de créer des missions",
       "Permettre aux missionaires de faire des rapports de mission",
@@ -207,6 +213,145 @@ export const projects = [
     lengthInWeeks: 64,
     image: "https://placehold.co/600x400",
     skills: [], // Filled by AI
-    tags: ["Application Web", "Gestion de Missions", "Humanitaire", "Dashboard", "Statistiques"],
-  }
+    tags: [
+      "Application Web",
+      "Gestion de Missions",
+      "Humanitaire",
+      "Dashboard",
+      "Statistiques",
+    ],
+  },
 ];
+
+type TableType<T extends Record<string, unknown>> = T[];
+
+class Table<T extends Record<string, unknown>> {
+  #tbName: string;
+  protected rows: TableType<T> = [];
+
+  constructor(tbName: string) {
+    this.#tbName = tbName;
+    const localStorage = window.localStorage;
+    const data = localStorage.getItem(`table_${tbName}`);
+    this.rows = data ? JSON.parse(data) : [];
+  }
+
+  get tbName() {
+    return this.#tbName;
+  }
+
+  static initTable<T extends Record<string, unknown>>(
+    tbName: string,
+    data: T[]
+  ) {
+    const localStorage = window.localStorage;
+    const isTableInitialized = localStorage.getItem(`${tbName}_initialized`);
+
+    // Initialize the table with the provided data
+    if (!isTableInitialized) {
+      localStorage.setItem(Table.getTableKey(tbName), JSON.stringify(data));
+      localStorage.setItem(`${tbName}_initialized`, "true");
+      return [tbName, true];
+    }
+
+    return [tbName, false];
+  }
+
+  static getTableKey(tableName: string) {
+    return `table_${tableName}`;
+  }
+
+  getRows() {
+    return this.rows;
+  }
+
+  getRowById(id: number) {
+    return this.getRows()[id] || null;
+  }
+
+  addRow(row: T) {
+    this.rows.push(row);
+    this.save();
+  }
+
+  save() {
+    const localStorage = window.localStorage;
+    localStorage.setItem(
+      Table.getTableKey(this.tbName),
+      JSON.stringify(this.rows)
+    );
+  }
+
+  deleteRow(id: number) {
+    this.rows = this.rows.filter((_, index) => index !== id);
+    this.save();
+  }
+
+  updateRow(id: number, updatedRow: T) {
+    if (id < 0 || id >= this.rows.length) {
+      throw new Error("Invalid row ID");
+    }
+    this.rows[id] = {
+      ...this.rows[id],
+      ...updatedRow,
+    };
+    this.save();
+  }
+}
+
+class UsersTable extends Table<(typeof users)[number]> {
+  constructor() {
+    super("users");
+  }
+}
+
+class CompaniesTable extends Table<(typeof companies)[number]> {
+  constructor() {
+    super("companies");
+  }
+}
+
+class ProjectsTable extends Table<(typeof projects)[number]> {
+  constructor() {
+    super("projects");
+  }
+}
+
+class TracksTable extends Table<(typeof tracks)[number]> {
+  constructor() {
+    super("tracks");
+  }
+}
+
+export function initDB() {
+  const localStorage = window.localStorage;
+
+  const result = [
+    Table.initTable("users", users),
+    Table.initTable("companies", companies),
+    Table.initTable("projects", projects),
+    Table.initTable("tracks", tracks),
+  ];
+
+  const failed = result.filter((r) => r[1] === false);
+  if (failed.length > 0) {
+    console.warn(
+      `Failed to initialize the following tables: ${failed
+        .map((r) => r[0])
+        .join(", ")}`
+    );
+  } else {
+    console.log("All tables initialized successfully.");
+  }
+
+  localStorage.setItem("db_initialized", `${failed.length === 0}`);
+  return result;
+}
+
+export const db = {
+  users: new UsersTable(),
+  companies: new CompaniesTable(),
+  projects: new ProjectsTable(),
+  tracks: new TracksTable(),
+  initDB,
+};
