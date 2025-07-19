@@ -117,20 +117,22 @@ export const companies = [
     website: "https://www.lyceclassiqueabidjan.ci/",
     companyType: "Établissement d'enseignement",
     location: "Abidjan, Côte d'Ivoire",
-  }
+  },
 ];
 
 export const findCompanyIndexByName = (name: string) => {
-  return companies.findIndex((company) => company.name.toLowerCase() === name.toLowerCase());
+  return companies.findIndex(
+    (company) => company.name.toLowerCase() === name.toLowerCase()
+  );
 };
-
 
 export const projects = [
   {
     name: "Application de ticket de restaurant",
     owner: findCompanyIndexByName("Lycée Classique d'Abidjan"),
     ownerEntity: "companies",
-    description: "Dans le cadre de la construction de ça nouvelle quantine dont la livraison est prévue pour le 18 Aout 2026, la direction du Lycée Classique d'Abidjan souhaite mettre en place une application de ticket de restaurant pour faciliter la gestion des repas.",
+    description:
+      "Dans le cadre de la construction de ça nouvelle quantine dont la livraison est prévue pour le 18 Aout 2026, la direction du Lycée Classique d'Abidjan souhaite mettre en place une application de ticket de restaurant pour faciliter la gestion des repas.",
     lengthInWeeks: 26,
     requirements: [
       "Permettre aux élèves de commander des repas en ligne",
@@ -139,14 +141,29 @@ export const projects = [
       "Assurer la sécurité des données des commandes",
     ],
     image: "https://placehold.co/600x400",
-    skills: [], // Filled by AI
+    skills: [
+      "Développement Front-End (HTML, CSS, JavaScript, Frameworks JS comme React/Vue/Angular)",
+      "Développement Mobile (si application native: Swift/Kotlin, React Native/Flutter)",
+      "Design UX/UI (expérience utilisateur, interfaces intuitives)",
+      "Développement Back-End (Langages comme Python/Node.js/Java/PHP, Frameworks web)",
+      "Gestion de Bases de Données (SQL: PostgreSQL/MySQL; NoSQL: MongoDB/Cassandra)",
+      "Conception d'APIs RESTful",
+      "Gestion de l'authentification et de l'autorisation",
+      "Intégration de systèmes de paiement",
+      "Sécurité des applications",
+      "Tests (unitaires, d'intégration, fonctionnels)",
+      "Déploiement et DevOps (CI/CD, Docker, Cloud Platforms comme AWS/Azure/GCP)",
+      "Gestion de projet (Agile, Scrum)",
+      "Communication et collaboration",
+    ], // Filled by AI
     tags: ["Application Mobile", "Gestion de Tickets", "Restaurant"],
   },
   {
     name: "Application de gestion de bibliothèque",
     owner: findCompanyIndexByName("ENSEA"),
     ownerEntity: "companies",
-    description: "L'ENSEA souhaite mettre en place une application de gestion de bibliothèque pour faciliter la gestion des livres et des emprunts.",
+    description:
+      "L'ENSEA souhaite mettre en place une application de gestion de bibliothèque pour faciliter la gestion des livres et des emprunts.",
     lengthInWeeks: 24,
     requirements: [
       "Permettre aux bibliothécaires de gérer les livres",
@@ -155,14 +172,27 @@ export const projects = [
       "Assurer la sécurité des données des emprunts",
     ],
     image: "https://placehold.co/600x400",
-    skills: [], // Filled by AI
+    skills: [
+      "Développement Front-End (HTML, CSS, JavaScript)",
+      "Design UX/UI",
+      "Développement Back-End (Langages et Frameworks web)",
+      "Conception et Gestion de Bases de Données relationnelles (SQL)",
+      "Modélisation de données (livres, membres, emprunts)",
+      "Fonctionnalités de recherche et de filtrage avancées",
+      "Gestion des utilisateurs et des rôles",
+      "Développement de rapports (ex: livres les plus empruntés)",
+      "Sécurité des données",
+      "Tests logiciels",
+      "Gestion de projet",
+    ], // Filled by AI
     tags: ["Application Web", "Gestion de Bibliothèque", "Livres"],
   },
   {
     name: "Application de gestion de projet",
     owner: findCompanyIndexByName("Côte d'Ivoire Telecom"),
     ownerEntity: "companies",
-    description: "Côte d'Ivoire Telecom souhaite mettre en place une application de gestion de projet pour faciliter la gestion des projets en cours.",
+    description:
+      "Côte d'Ivoire Telecom souhaite mettre en place une application de gestion de projet pour faciliter la gestion des projets en cours.",
     lengthInWeeks: 36,
     requirements: [
       "Permettre aux chefs de projet de créer des projets",
@@ -171,14 +201,30 @@ export const projects = [
       "Permettre aux chefs de projet de générer des rapports d'avancement",
     ],
     image: "https://placehold.co/600x400",
-    skills: [], // Filled by AI
+    skills: [
+      "Développement Front-End (Interfaces interactives, visualisation de données, diagrammes de Gantt, tableaux Kanban)",
+      "Design UX/UI (fluidité de l'interface, clarté visuelle)",
+      "Développement Back-End (Gestion des tâches, projets, utilisateurs, permissions)",
+      "Gestion de Bases de Données (modèles de données complexes)",
+      "Développement d'APIs robustes",
+      "Fonctionnalités de collaboration en temps réel (WebSockets)",
+      "Système de notifications",
+      "Gestion des droits d'accès et des rôles",
+      "Rapports et tableaux de bord personnalisables",
+      "Sécurité des applications",
+      "Tests (performance, robustesse)",
+      "Maîtrise des méthodologies de gestion de projet (Agile, Scrum, Kanban)",
+      "Capacité à innover et proposer des solutions",
+      "Déploiement et mise à l'échelle",
+    ], // Filled by AI
     tags: ["Application Web", "Gestion de Projet", "Télécommunications"],
   },
   {
     name: "Application de gestion des ressources humaines",
     owner: findCompanyIndexByName("Orange Côte d'Ivoire"),
     ownerEntity: "companies",
-    description: "Orange Côte d'Ivoire souhaite mettre en place une application de gestion des ressources humaines pour faciliter la gestion des employés.",
+    description:
+      "Orange Côte d'Ivoire souhaite mettre en place une application de gestion des ressources humaines pour faciliter la gestion des employés.",
     lengthInWeeks: 40,
     requirements: [
       "Permettre aux RH de gérer les employés",
@@ -187,14 +233,28 @@ export const projects = [
       "Assurer la sécurité des données des employés",
     ],
     image: "https://placehold.co/600x400",
-    skills: [], // Filled by AI
+    skills: [
+      "Développement Front-End (Interfaces claires et ergonomiques)",
+      "Design UX/UI (pour différents profils: employés, managers, RH)",
+      "Développement Back-End (Gestion des dossiers employés, paie, congés, évaluations, recrutement)",
+      "Gestion de Bases de Données sécurisées et conformes",
+      "Maitrise des réglementations RH et de la protection des données (GDPR, etc.)",
+      "Sécurité de l'information (gestion des données sensibles)",
+      "Développement de modules spécifiques (ex: gestion des compétences, portail employés)",
+      "Intégration avec d'autres systèmes (paie, comptabilité)",
+      "Fonctionnalités de reporting et d'analyse RH",
+      "Tests rigoureux (fonctionnels, de sécurité, de performance)",
+      "Gestion de projet avec un focus sur la conformité légale et la confidentialité",
+      "Communication avec les parties prenantes RH",
+    ], // Filled by AI
     tags: ["Application Web", "Gestion des RH", "Télécommunications"],
   },
   {
     name: "Plateforme de Tracking de Mission",
     owner: findCompanyIndexByName("Children Of Africa"),
     ownerEntity: "companies",
-    description: "children of Africa souhaite mettre en place une plateforme de tracking des missions pour faciliter la gestion des missions humanitaires.",
+    description:
+      "children of Africa souhaite mettre en place une plateforme de tracking des missions pour faciliter la gestion des missions humanitaires.",
     requirements: [
       "Permettre aux admin de créer des missions",
       "Permettre aux missionaires de faire des rapports de mission",
@@ -206,7 +266,28 @@ export const projects = [
     ],
     lengthInWeeks: 64,
     image: "https://placehold.co/600x400",
-    skills: [], // Filled by AI
-    tags: ["Application Web", "Gestion de Missions", "Humanitaire", "Dashboard", "Statistiques"],
-  }
+    skills: [
+      "Développement Front-End (Cartographie interactive, tableaux de bord de suivi en temps réel)",
+      "Design UX/UI (visualisation claire des données de localisation et de statut)",
+      "Développement Back-End (Traitement de données géospatiales, gestion des flux de données en temps réel)",
+      "Gestion de Bases de Données (support géospatial comme PostGIS, MongoDB avec capacités géo)",
+      "Intégration d'APIs de cartographie (Google Maps, OpenStreetMap)",
+      "Développement d'APIs pour la réception de données de tracking (GPS, IoT)",
+      "Traitement et stockage de données massives (Big Data si volume important)",
+      "Système de notifications et d'alertes",
+      "Analyse de données (historique des missions, optimisation des parcours)",
+      "Sécurité des données de localisation",
+      "Tests de performance et de résilience (gestion des pics de trafic)",
+      "Déploiement et scalabilité (Cloud, microservices)",
+      "Connaissances en systèmes d'information géographique (SIG)",
+      "Gestion de projet complexe et interdisciplinaire",
+    ], // Filled by AI
+    tags: [
+      "Application Web",
+      "Gestion de Missions",
+      "Humanitaire",
+      "Dashboard",
+      "Statistiques",
+    ],
+  },
 ];
