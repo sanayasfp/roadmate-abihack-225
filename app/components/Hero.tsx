@@ -9,20 +9,6 @@ export function Hero() {
           Une plateforme IA qui te guide avec des parcours personnalisés, des
           projets réels, et des binômes d’apprentissage en Afrique.
         </p>
-        <div className="flex justify-center space-x-4">
-          <a
-            href="/start"
-            className="bg-orange-600 text-white px-6 py-3 rounded-md hover:bg-orange-700"
-          >
-            Commencer maintenant
-          </a>
-          <a
-            href="#options"
-            className="bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-blue-700"
-          >
-            Explorer les options
-          </a>
-        </div>
       </div>
     </section>
   );
