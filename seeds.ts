@@ -143,7 +143,21 @@ const projects = [
       "Assurer la sécurité des données des commandes",
     ],
     image: "https://placehold.co/600x400",
-    skills: [], // Filled by AI
+    skills: [
+      "Développement Front-End (HTML, CSS, JavaScript, Frameworks JS comme React/Vue/Angular)",
+      "Développement Mobile (si application native: Swift/Kotlin, React Native/Flutter)",
+      "Design UX/UI (expérience utilisateur, interfaces intuitives)",
+      "Développement Back-End (Langages comme Python/Node.js/Java/PHP, Frameworks web)",
+      "Gestion de Bases de Données (SQL: PostgreSQL/MySQL; NoSQL: MongoDB/Cassandra)",
+      "Conception d'APIs RESTful",
+      "Gestion de l'authentification et de l'autorisation",
+      "Intégration de systèmes de paiement",
+      "Sécurité des applications",
+      "Tests (unitaires, d'intégration, fonctionnels)",
+      "Déploiement et DevOps (CI/CD, Docker, Cloud Platforms comme AWS/Azure/GCP)",
+      "Gestion de projet (Agile, Scrum)",
+      "Communication et collaboration",
+    ], // Filled by AI
     tags: ["Application Mobile", "Gestion de Tickets", "Restaurant"],
   },
   {
@@ -160,7 +174,19 @@ const projects = [
       "Assurer la sécurité des données des emprunts",
     ],
     image: "https://placehold.co/600x400",
-    skills: [], // Filled by AI
+    skills: [
+      "Développement Front-End (HTML, CSS, JavaScript)",
+      "Design UX/UI",
+      "Développement Back-End (Langages et Frameworks web)",
+      "Conception et Gestion de Bases de Données relationnelles (SQL)",
+      "Modélisation de données (livres, membres, emprunts)",
+      "Fonctionnalités de recherche et de filtrage avancées",
+      "Gestion des utilisateurs et des rôles",
+      "Développement de rapports (ex: livres les plus empruntés)",
+      "Sécurité des données",
+      "Tests logiciels",
+      "Gestion de projet",
+    ], // Filled by AI
     tags: ["Application Web", "Gestion de Bibliothèque", "Livres"],
   },
   {
@@ -177,7 +203,22 @@ const projects = [
       "Permettre aux chefs de projet de générer des rapports d'avancement",
     ],
     image: "https://placehold.co/600x400",
-    skills: [], // Filled by AI
+    skills: [
+      "Développement Front-End (Interfaces interactives, visualisation de données, diagrammes de Gantt, tableaux Kanban)",
+      "Design UX/UI (fluidité de l'interface, clarté visuelle)",
+      "Développement Back-End (Gestion des tâches, projets, utilisateurs, permissions)",
+      "Gestion de Bases de Données (modèles de données complexes)",
+      "Développement d'APIs robustes",
+      "Fonctionnalités de collaboration en temps réel (WebSockets)",
+      "Système de notifications",
+      "Gestion des droits d'accès et des rôles",
+      "Rapports et tableaux de bord personnalisables",
+      "Sécurité des applications",
+      "Tests (performance, robustesse)",
+      "Maîtrise des méthodologies de gestion de projet (Agile, Scrum, Kanban)",
+      "Capacité à innover et proposer des solutions",
+      "Déploiement et mise à l'échelle",
+    ], // Filled by AI
     tags: ["Application Web", "Gestion de Projet", "Télécommunications"],
   },
   {
@@ -194,7 +235,20 @@ const projects = [
       "Assurer la sécurité des données des employés",
     ],
     image: "https://placehold.co/600x400",
-    skills: [], // Filled by AI
+    skills: [
+      "Développement Front-End (Interfaces claires et ergonomiques)",
+      "Design UX/UI (pour différents profils: employés, managers, RH)",
+      "Développement Back-End (Gestion des dossiers employés, paie, congés, évaluations, recrutement)",
+      "Gestion de Bases de Données sécurisées et conformes",
+      "Maitrise des réglementations RH et de la protection des données (GDPR, etc.)",
+      "Sécurité de l'information (gestion des données sensibles)",
+      "Développement de modules spécifiques (ex: gestion des compétences, portail employés)",
+      "Intégration avec d'autres systèmes (paie, comptabilité)",
+      "Fonctionnalités de reporting et d'analyse RH",
+      "Tests rigoureux (fonctionnels, de sécurité, de performance)",
+      "Gestion de projet avec un focus sur la conformité légale et la confidentialité",
+      "Communication avec les parties prenantes RH",
+    ], // Filled by AI
     tags: ["Application Web", "Gestion des RH", "Télécommunications"],
   },
   {
@@ -214,7 +268,22 @@ const projects = [
     ],
     lengthInWeeks: 64,
     image: "https://placehold.co/600x400",
-    skills: [], // Filled by AI
+    skills: [
+      "Développement Front-End (Cartographie interactive, tableaux de bord de suivi en temps réel)",
+      "Design UX/UI (visualisation claire des données de localisation et de statut)",
+      "Développement Back-End (Traitement de données géospatiales, gestion des flux de données en temps réel)",
+      "Gestion de Bases de Données (support géospatial comme PostGIS, MongoDB avec capacités géo)",
+      "Intégration d'APIs de cartographie (Google Maps, OpenStreetMap)",
+      "Développement d'APIs pour la réception de données de tracking (GPS, IoT)",
+      "Traitement et stockage de données massives (Big Data si volume important)",
+      "Système de notifications et d'alertes",
+      "Analyse de données (historique des missions, optimisation des parcours)",
+      "Sécurité des données de localisation",
+      "Tests de performance et de résilience (gestion des pics de trafic)",
+      "Déploiement et scalabilité (Cloud, microservices)",
+      "Connaissances en systèmes d'information géographique (SIG)",
+      "Gestion de projet complexe et interdisciplinaire",
+    ], // Filled by AI
     tags: [
       "Application Web",
       "Gestion de Missions",
