@@ -1,6 +1,8 @@
-export const tracks = [];
+"use client";
 
-export const users = [
+const tracks: [] = [];
+
+const users = [
   {
     lastname: "Kouadio",
     firstname: "Alice",
@@ -63,7 +65,7 @@ export const users = [
   },
 ];
 
-export const companies = [
+const companies = [
   {
     name: "Children Of Africa",
     description:
@@ -120,13 +122,13 @@ export const companies = [
   },
 ];
 
-export const findCompanyIndexByName = (name: string) => {
+const findCompanyIndexByName = (name: string) => {
   return companies.findIndex(
     (company) => company.name.toLowerCase() === name.toLowerCase()
   );
 };
 
-export const projects = [
+const projects = [
   {
     name: "Application de ticket de restaurant",
     owner: findCompanyIndexByName("Lycée Classique d'Abidjan"),
@@ -231,9 +233,17 @@ class Table<T extends Record<string, unknown>> {
 
   constructor(tbName: string) {
     this.#tbName = tbName;
-    const localStorage = window.localStorage;
-    const data = localStorage.getItem(`table_${tbName}`);
-    this.rows = data ? JSON.parse(data) : [];
+
+    try {
+      if (typeof window !== "undefined") {
+        const localStorage = window?.localStorage || {};
+        const data = localStorage.getItem(`table_${tbName}`);
+        this.rows = data ? JSON.parse(data) : [];
+      }
+    } catch (error) {
+      console.error(`Error initializing table ${tbName}:`, error);
+      this.rows = [];
+    }
   }
 
   get tbName() {
@@ -242,15 +252,17 @@ class Table<T extends Record<string, unknown>> {
 
   static initTable<T extends Record<string, unknown>>(
     tbName: string,
-    data: T[]
+    data: T[],
+    force: boolean = false
   ) {
     const localStorage = window.localStorage;
-    const isTableInitialized = localStorage.getItem(`${tbName}_initialized`);
+    const tbInitKey = `table_${tbName}_initialized`;
+    const isTableInitialized = localStorage.getItem(tbInitKey);
 
     // Initialize the table with the provided data
-    if (!isTableInitialized) {
+    if (!isTableInitialized || force) {
       localStorage.setItem(Table.getTableKey(tbName), JSON.stringify(data));
-      localStorage.setItem(`${tbName}_initialized`, "true");
+      localStorage.setItem(tbInitKey, "true");
       return [tbName, true];
     }
 
@@ -323,14 +335,14 @@ class TracksTable extends Table<(typeof tracks)[number]> {
   }
 }
 
-export function initDB() {
+export function initDB(force = false) {
   const localStorage = window.localStorage;
 
   const result = [
-    Table.initTable("users", users),
-    Table.initTable("companies", companies),
-    Table.initTable("projects", projects),
-    Table.initTable("tracks", tracks),
+    Table.initTable("users", users, force),
+    Table.initTable("companies", companies, force),
+    Table.initTable("projects", projects, force),
+    Table.initTable("tracks", tracks, force),
   ];
 
   const failed = result.filter((r) => r[1] === false);
