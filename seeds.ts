@@ -134,7 +134,7 @@ const projects = [
     owner: findCompanyIndexByName("Lycée Classique d'Abidjan"),
     ownerEntity: "companies",
     description:
-      "Dans le cadre de la construction de ça nouvelle quantine dont la livraison est prévue pour le 18 Aout 2026, la direction du Lycée Classique d'Abidjan souhaite mettre en place une application de ticket de restaurant pour faciliter la gestion des repas.",
+      "Dans le cadre de la construction de sa nouvelle cantine dont la livraison est prévue pour le 18 Août 2026, la direction du Lycée Classique d'Abidjan souhaite mettre en place une application de ticket de restaurant pour faciliter la gestion des repas.",
     lengthInWeeks: 26,
     requirements: [
       "Permettre aux élèves de commander des repas en ligne",
@@ -240,7 +240,7 @@ const projects = [
       "Design UX/UI (pour différents profils: employés, managers, RH)",
       "Développement Back-End (Gestion des dossiers employés, paie, congés, évaluations, recrutement)",
       "Gestion de Bases de Données sécurisées et conformes",
-      "Maitrise des réglementations RH et de la protection des données (GDPR, etc.)",
+      "Maîtrise des réglementations RH et de la protection des données (GDPR, etc.)",
       "Sécurité de l'information (gestion des données sensibles)",
       "Développement de modules spécifiques (ex: gestion des compétences, portail employés)",
       "Intégration avec d'autres systèmes (paie, comptabilité)",
@@ -259,7 +259,7 @@ const projects = [
       "children of Africa souhaite mettre en place une plateforme de tracking des missions pour faciliter la gestion des missions humanitaires.",
     requirements: [
       "Permettre aux admin de créer des missions",
-      "Permettre aux missionaires de faire des rapports de mission",
+      "Permettre aux missionnaires de faire des rapports de mission",
       "Permettre aux donateurs de suivre l'avancement des missions",
       "Permettre aux donateurs de faire des dons en ligne",
       "Permettre aux donateurs de suivre l'utilisation de leurs dons",
