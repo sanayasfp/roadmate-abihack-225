@@ -27,7 +27,7 @@ const ComingSoon: React.FC<ComingSoonProps> = ({
           <ReactMarkdown>{description}</ReactMarkdown>
         </div>
         <Link
-          href="/co-learning-matching"
+          href="/co-learner-matching"
           className="inline-flex items-center gap-2 bg-gradient-to-r from-orange-500 to-orange-600 text-white px-4 py-2 rounded-full hover:from-orange-600 hover:to-orange-700 transition"
         >
           <svg
