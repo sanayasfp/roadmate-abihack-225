@@ -103,7 +103,7 @@ export function Header() {
             ))}
           </nav>
         </div>
-        <div className="flex items-center space-x-4">
+        {/* <div className="flex items-center space-x-4">
           <Link href="/login" className="text-sm hover:text-orange-500">
             Connexion
           </Link>
@@ -113,7 +113,7 @@ export function Header() {
           >
             {"S'inscrire"}
           </Link>
-        </div>
+        </div> */}
       </Container>
     </header>
   );
