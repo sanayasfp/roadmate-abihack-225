@@ -4,6 +4,75 @@ import { X, MapPin, Mail, UserPlus, Heart, Target } from "lucide-react";
 import { User } from "@/seeds";
 import { useRouter } from "next/navigation";
 
+
+const nextSteps = `Absolument ! Voici la version française de la section "Next Steps", adaptée pour être affichée après le flow de démonstration qui s'arrête à l'envoi d'invitations à des co-apprenants.
+
+---
+
+# Roadmate : Le chemin à parcourir – Notre vision pour l'avenir
+
+Vous venez de voir un aperçu de la puissance de Roadmate : personnaliser votre parcours d'apprentissage et vous connecter à une communauté. Notre démo s'est conclue par l'envoi d'une invitation à des co-apprenants, soulignant notre engagement envers l'apprentissage collaboratif et social.
+
+Mais ce n'est que le début. Le projet de hackathon que vous avez vu est une puissante preuve de concept démontrant le potentiel transformateur de l'IA dans l'apprentissage personnalisé. Bien que notre démo initiale illustre un flux de travail essentiel, ce n'est que la première étape de notre ambitieux voyage pour redéfinir l'éducation en ligne.
+
+La vision ultime de **Roadmate** est d'être le compagnon d'apprentissage IA indispensable qui ne se contente pas de vous guider, mais vous comprend véritablement, vous propulsant de la curiosité à la maîtrise, et de l'apprentissage à la **préparation à l'emploi**.
+
+Voici un aperçu détaillé des prochaines étapes passionnantes que nous envisageons pour Roadmate, transformant notre "époque" en un écosystème d'apprentissage complet et dynamique :
+
+---
+
+## 1. Personnalisation approfondie et feuilles de route hyper-adaptatives
+
+Notre force principale réside dans la personnalisation. Le futur Roadmate portera cela au niveau supérieur :
+
+*   **Profilage cognitif avancé :** Au-delà de simples questionnaires, nous intégrerons des évaluations plus sophistiquées pour comprendre les forces, les faiblesses cognitives et les parcours d'apprentissage préférés d'un apprenant (par exemple, analytique vs holistique, séquentiel vs aléatoire).
+*   **Adaptation en temps réel :** La feuille de route ne sera pas seulement personnalisée au début ; elle s'ajustera dynamiquement en fonction des progrès de l'apprenant, des défis rencontrés, du temps passé sur les sujets et même des performances aux exercices. Si vous excellez, elle accélère ; si vous avez des difficultés, elle propose des explications alternatives ou plus de pratique.
+*   **Suggestions de styles d'apprentissage basées sur l'IA :** Roadmate recommandera intelligemment les types de ressources optimaux (par exemple, "Ce concept pourrait être mieux compris grâce à un exercice pratique pour votre profil", ou "Essayez un explicateur visuel ici") en tirant parti de l'IA pour prédire ce qui vous convient le mieux.
+
+## 2. Contenu plus riche, multimodal et interactif
+
+Au-delà du texte et des liens, Roadmate offrira une expérience d'apprentissage immersive :
+
+*   **Explications visuelles et vidéo générées par l'IA :** En utilisant une IA média avancée (comme Google Veo, une fois largement disponible), Roadmate générera de courtes explications animées ou des clips narrés, ludiques et culturellement pertinents, pour démystifier des concepts complexes.
+*   **Laboratoires interactifs et environnements de codage :** L'intégration avec des outils comme Project IDX permettra le codage en ligne, des exercices interactifs et des environnements bac à sable où les apprenants pourront immédiatement appliquer ce qu'ils apprennent sans configurations locales complexes.
+*   **Contenu contribué par la communauté :** Un système robuste permettra aux apprenants experts ou aux mentors de contribuer des tutoriels de haute qualité, des études de cas et des solutions de projets, enrichissant le pool de connaissances et favorisant une communauté de partage des savoirs.
+
+## 3. Une place de marché de projets florissante et une simulation client authentique
+
+Notre modèle d'apprentissage par projets est central. Nous allons le transformer en un écosystème complet :
+
+*   **Place de marché de projets complète :** Des tiers – ONG, startups, petites entreprises, même d'autres apprenants – pourront publier des projets réels ou réalistes, agissant comme des "clients" avec de véritables exigences et des délais.
+*   **Assistance IA pour la définition de projets :** Roadmate utilisera l'IA pour aider les clients à articuler les exigences des projets et assister les apprenants à décomposer des projets complexes en jalons gérables et alignés sur les compétences.
+*   **Cycles de feedback automatisés et par les pairs :** Mise en œuvre d'outils de linter/revue de code basés sur l'IA (le cas échéant) et facilitation de processus structurés de révision par les pairs pour fournir un feedback continu et exploitable sur les livrables du projet.
+
+## 4. Écosystème robuste de collaboration par les pairs et de mentorat
+
+Lutter contre l'isolement est essentiel. Roadmate favorisera un véritable apprentissage collaboratif :
+
+*   **Appariement intelligent des pairs/équipes :** Implémentation d'un algorithme d'appariement sophistiqué pour jumeler des apprenants sur des parcours complémentaires (par exemple, Backend + Frontend) ou pour le travail collaboratif sur des projets, simulant les dynamiques d'équipe du monde réel (contrôle de version, contrats d'API, habitudes agiles).
+*   **Mentorat structuré :** Développement d'un système complet permettant aux mentors humains d'offrir des "heures de bureau", des séances de coaching individuelles ou des révisions de jalons, déclenchées par la demande de l'apprenant ou les besoins identifiés par l'IA.
+*   **Espaces de travail collaboratifs :** Intégration d'outils pour le codage partagé, la documentation et la communication directement au sein de la plateforme pour faciliter un travail d'équipe fluide sur les projets.
+
+## 5. Résultats, incitations et parcours directs vers l'employabilité
+
+Roadmate vise des résultats tangibles. Nous connecterons l'apprentissage directement aux opportunités de carrière :
+
+*   **Badges de compétences et certifications :** Offre de badges de compétences vérifiables et de certificats d'achèvement liés à la maîtrise de projets, reconnus par les partenaires industriels.
+*   **Parcours de stages et de placement d'emplois :** Partenariat avec des organisations et des entreprises pour offrir un accès direct à des stages, des entretiens d'embauche ou des viviers de talents spécifiques après la réussite des feuilles de route et des projets pertinents.
+*   **Génération dynamique de portfolios :** Génération automatique de portfolios professionnels basés sur les projets achevés et les compétences acquises, présentant les capacités d'un apprenant aux employeurs potentiels.
+
+## 6. Impact plus large et évolutivité en Afrique (et au-delà)
+
+Notre vision à long terme étend l'impact de Roadmate :
+
+*   **Expansion multi-domaines :** Bien que commençant par la technologie, le cadre adaptatif de Roadmate peut s'étendre à d'autres professions en demande en Afrique, telles que la technologie de la santé, l'agri-tech, la science des données, les opérations d'IA, et plus encore.
+*   **Hyper-localisation :** Développement d'un support multilingue, de contenus culturellement pertinents et d'adaptations de l'interface utilisateur/UX pour répondre aux besoins et contextes diversifiés des différentes régions africaines.
+*   **Partenariats et croissance de l'écosystème :** Collaboration avec des institutions éducatives, des ONG et des programmes gouvernementaux pour intégrer Roadmate dans les initiatives nationales de perfectionnement des compétences et les stratégies plus larges de développement des talents.
+
+---
+
+**Roadmate est plus qu'une simple plateforme ; c'est un mouvement vers un avenir où l'apprentissage est personnel, pratique, collaboratif et directement lié aux opportunités. Nous construisons la boussole sur mesure pour le parcours unique de chaque apprenant vers la maîtrise.**`;
+
 const UsersInvitation: React.FC<{ Users: User[] }> = ({ Users }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [invitedUser, setInvitedUser] = useState<User | null>(
@@ -64,7 +133,7 @@ const UsersInvitation: React.FC<{ Users: User[] }> = ({ Users }) => {
   };
 
   const completeCoursesAndDiscoverNextSteps = () => {
-    router.push("coming-soon");
+    router.push(`coming-soon?featureName=${encodeURIComponent("Next Steps")}&description=${encodeURIComponent(nextSteps)}`);
   };
 
   return (
