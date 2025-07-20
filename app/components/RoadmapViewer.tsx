@@ -1,5 +1,6 @@
 "use client";
-import React, {useCallback, useEffect, useMemo, useState} from "react";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
+import { useRouter } from "next/navigation";
 
 /**
  * RoadmapViewer
@@ -96,7 +97,8 @@ function loadProgress(ns: string): Record<string, boolean> {
     const raw = localStorage.getItem(ns);
     if (!raw) return {};
     const parsed = JSON.parse(raw);
-    if (parsed && typeof parsed === "object") return parsed as Record<string, boolean>;
+    if (parsed && typeof parsed === "object")
+      return parsed as Record<string, boolean>;
   } catch {
     /* ignore */
   }
@@ -121,8 +123,20 @@ export function RoadmapViewer({
   // build tree once
   const tree = useMemo(() => buildTree(data), [data]);
 
+  const router = useRouter();
+
   // load persisted step completion
-  const [progress, setProgress] = useState<Record<string, boolean>>(() => loadProgress(storageKey));
+  const [progress, setProgress] = useState<Record<string, boolean>>(() =>
+    loadProgress(storageKey)
+  );
+
+  const findCoLearnes = async () => {
+    router.push("co-learner");
+  };
+
+  const goToProjects = async () => {
+    router.push("project");
+  };
 
   // persist on change
   useEffect(() => {
@@ -169,6 +183,27 @@ export function RoadmapViewer({
           />
         ))}
       </div>
+      {/* Actions */}
+      <div className="mt-10 flex gap-4">
+        <button
+          type="button"
+          onClick={() => goToProjects()}
+          className="px-5 py-3 rounded-lg border border-slate-300 text-slate-700 hover:bg-slate-100 transition"
+        >
+          ← Revenir aux projets
+        </button>
+
+        <button
+          type="button"
+          // disabled={!selectedProject}
+          onClick={() => findCoLearnes()}
+          className={
+            "px-6 py-3 rounded-lg font-semibold text-white transition-all shadow bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 hover:scale-105"
+          }
+        >
+          Trouver des co-apprenants
+        </button>
+      </div>
     </div>
   );
 }
@@ -194,7 +229,13 @@ interface RoadmapSectionProps {
   setProgress: React.Dispatch<React.SetStateAction<Record<string, boolean>>>;
 }
 
-function RoadmapSection({ node, level, defaultExpanded, progress, setProgress }: RoadmapSectionProps) {
+function RoadmapSection({
+  node,
+  level,
+  defaultExpanded,
+  progress,
+  setProgress,
+}: RoadmapSectionProps) {
   const [open, setOpen] = useState(defaultExpanded);
   const toggle = () => setOpen((o) => !o);
 
@@ -227,7 +268,8 @@ function RoadmapSection({ node, level, defaultExpanded, progress, setProgress }:
           <h3 className="font-semibold text-lg text-slate-800">{node.name}</h3>
           {sectionTotal > 0 && (
             <p className="mt-1 text-xs text-gray-500">
-              {sectionDone}/{sectionTotal} étapes · cliquer pour {open ? "réduire" : "développer"}
+              {sectionDone}/{sectionTotal} étapes · cliquer pour{" "}
+              {open ? "réduire" : "développer"}
             </p>
           )}
         </div>
@@ -278,15 +320,24 @@ interface RoadmapStepRowProps {
   setProgress: React.Dispatch<React.SetStateAction<Record<string, boolean>>>;
 }
 
-function RoadmapStepRow({ sectionId, stepIdx, step, progress, setProgress }: RoadmapStepRowProps) {
+function RoadmapStepRow({
+  sectionId,
+  stepIdx,
+  step,
+  progress,
+  setProgress,
+}: RoadmapStepRowProps) {
   const [open, setOpen] = useState(false);
   const k = makeStepKey(sectionId, stepIdx);
   const done = !!progress[k];
 
-  const toggleDone = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
-    const checked = e.target.checked;
-    setProgress((prev) => ({ ...prev, [k]: checked }));
-  }, [k, setProgress]);
+  const toggleDone = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      const checked = e.target.checked;
+      setProgress((prev) => ({ ...prev, [k]: checked }));
+    },
+    [k, setProgress]
+  );
 
   return (
     <div className="rounded-md border border-gray-200 bg-white p-4 shadow-sm">
@@ -303,9 +354,7 @@ function RoadmapStepRow({ sectionId, stepIdx, step, progress, setProgress }: Roa
           className="flex-1 text-left"
         >
           <div className="flex items-center justify-between">
-            <span className="font-medium text-slate-800">
-              {step.title}
-            </span>
+            <span className="font-medium text-slate-800">{step.title}</span>
             <span className="ml-4 text-xs text-blue-600 underline">
               {open ? "Masquer" : "Détails"}
             </span>
