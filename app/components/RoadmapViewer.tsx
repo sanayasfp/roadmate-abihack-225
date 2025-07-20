@@ -145,8 +145,8 @@ export function RoadmapViewer({
 
   // compute summary stats (steps done vs total)
   const { totalSteps, doneSteps } = useMemo(() => {
-    let t = 0,
-      d = 0;
+    let t = 0;
+    let d = 0;
     const walk = (nodes: RoadmapNode[]) => {
       nodes.forEach((n) => {
         n.steps.forEach((_, i) => {
@@ -241,7 +241,7 @@ function RoadmapSection({
 
   // derived counts for section progress
   const { sectionTotal, sectionDone } = useMemo(() => {
-    let t = node.steps.length;
+    const t = node.steps.length;
     let d = 0;
     node.steps.forEach((_, i) => {
       if (progress[makeStepKey(node.id, i)]) d += 1;
