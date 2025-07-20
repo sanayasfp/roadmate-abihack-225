@@ -2,6 +2,8 @@ import { title } from "process";
 import { Container } from "./Container";
 import { Logo } from "./Logo";
 import Link from "next/link";
+import React from "react";
+import { db } from "@/seeds";
 
 const menus = [
   {
@@ -19,6 +21,11 @@ const menus = [
 ];
 
 export function Header() {
+  React.useEffect(() => {
+    // Initialize the database
+    db.initDB();
+  }, []);
+
   return (
     <header className="bg-slate-900 text-white py-5">
       <Container className="container mx-auto flex justify-between items-center">

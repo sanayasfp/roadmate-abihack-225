@@ -1,6 +1,122 @@
 "use client";
 
-const tracks: [] = [];
+const tracks = [
+  {
+    name: "Développement Front-End",
+    skills: [
+      "HTML/CSS/JavaScript",
+      "Accessibility",
+      "Version Control",
+      "Responsive Web Design",
+      "Basics of UX",
+      "Basics of SEO",
+      "RESTful APIs",
+      "Testing and Debugging",
+      "Browser DevTools",
+      "Frameworks (React, Vue, Angular)",
+      "Web Performance",
+      "TypeScript",
+    ],
+  },
+  {
+    name: "Développement Back-End",
+    skills: [
+      "Programming Languages (Python, Java, JavaScript, PHP, Go)",
+      "Software Design and Architecture",
+      "Database Management Systems",
+      "API Development Capabilities",
+      "Version Control",
+      "Testing",
+      "CI/CD and DevOps Familiarity",
+    ],
+  },
+  {
+    name: "Analyse de Données",
+    skills: [
+      "Data Collection",
+      "Data Cleanup",
+      "Data Exploration",
+      "Data Visualization",
+      "Statistical Analysis",
+      "Machine Learning Basics",
+      "Excel (Functions, Pivot Tables, Charting)",
+      "SQL",
+      "Programming (Python, R)",
+      "Data Manipulation Libraries (Pandas, Dplyr)",
+      "Data Visualisation Libraries (Matplotlib, ggplot2, Tableau, PowerBI, Seaborn)",
+      "Data Cleaning (Handling Missing Data, Removing Duplicates, Finding Outliers)",
+      "Data Transformation",
+      "Descriptive Analysis (Mean, Mode, Median, Average, Dispersion, Range, Variance, Standard Deviation, Distribution Shape, Skewness, Kurtosis)",
+      "Visualising Distributions (Bar Charts, Histograms, Line Chart, Stacked Chart, Scatter Plot, Funnel Chart, Heatmap, Pie Chart)",
+      "Hypothesis Testing",
+      "Correlation Analysis",
+      "Regression",
+      "Supervised Learning",
+      "Unsupervised Learning",
+      "Reinforcement Learning",
+      "ML Algorithms (Decision Trees, Logistic Regression, K-Means Clustering, Naive Bayes, KNN)",
+      "Model Evaluation Techniques",
+      "Big Data Technologies (Hadoop, Spark, Data Storage, MapReduce, Parallel Processing, MPI)",
+      "Deep Learning (Neural Networks, CNNs, RNNs, TensorFlow, PyTorch, Image Recognition, Natural Language Processing)",
+    ],
+  },
+  {
+    name: "Science des Données",
+    skills: [
+      "Programming (Python, R, SQL)",
+      "Statistics & Math (statistics, probability, linear algebra)",
+      "Data Visualization",
+      "Machine Learning (algorithms and models)",
+      "Big Data Tools (Hadoop, Spark)",
+      "Data Wrangling",
+      "Critical Thinking",
+      "Communication",
+      "Domain Knowledge",
+    ],
+  },
+  {
+    name: "Intelligence Artificielle / Machine Learning",
+    skills: [
+      "Mathematics for ML (Linear Algebra, Calculus, Probability & Statistics, Discrete Mathematics)",
+      "Programming Fundamentals (Python Basics, Data Structures and OOPs, NumPy, Pandas, Matplotlib, Seaborn, SciPy)",
+      "Data Cleaning & Preprocessing (Data Cleaning, Feature Engineering, Dimensionality Reduction, Feature Scaling & Normalization, Feature Selection)",
+      "Supervised Learning (Regression, Classification, Linear & Polynomial Regression, Ridge, Lasso, ElasticNet Regularization)",
+      "Unsupervised Learning (Clustering Algos, Dimensionality Reduction)",
+      "Model Evaluation & Metrics (Accuracy, Precision, Recall, F1-Score, ROC-AUC, Log Loss, K-Fold Cross-Validation, LOOCV, Confusion Matrix)",
+      "Deep Learning Architecture (Deep Learning Foundations, Recurrent Neural Networks, Convolution Neural Networks, Attention Mechanisms, Autoencoders, Perceptron, Multi-Layer Perceptrons, Forward propagation, Backpropagation, Activation Functions, Loss Functions, Generative Adversarial Networks (GANs))",
+      "Natural Language Processing (NLP) (Tokenization, Stemming, Lemmatization, Embeddings, Attention Models, Sentiment Analysis, Named Entity Recognition (NER))",
+      "Reinforcement Learning (Q-Learning, Deep Q-Networks, Policy Gradients, Actor-Critic Methods)",
+      "Explainable AI (XAI)",
+    ],
+  },
+  {
+    name: "Qualité Logicielle (QA)",
+    skills: [
+      "Tester Mindset",
+      "QA Principles (Validation vs. Verification, Early Testing)",
+      "Testing Approaches (White Box, Gray Box, Black Box)",
+      "Test Management Tools",
+      "Functional Testing",
+      "UAT (User Acceptance Testing)",
+      "Exploratory Testing",
+      "Sanity Testing",
+      "Regression Testing",
+      "Smoke Testing",
+      "Unit Testing",
+      "Integration Testing",
+      "Non Functional Testing (Load, Performance, Stress, Security, Accessibility)",
+      "Project Management (Waterfall, V Model, Scrum, Kanban, SAFe, XP)",
+      "Manual Testing (Test Planning, Test Cases and Scenarios, Reporting, Compatibility, Verification and Validation)",
+      "TDD (Test-Driven Development)",
+      "Automated Testing (Backend Automation, Mobile Automation, Frontend Automation)",
+      "Bug Management",
+      "Reporting",
+      "Monitoring and Logs",
+      "Version Control System (Git)",
+      "Repo Hosting Services (GitHub, BitBucket)",
+    ],
+  },
+];
 
 const users = [
   {
@@ -436,3 +552,8 @@ export const db = {
   tracks: new TracksTable(),
   initDB,
 };
+
+export type Project = (typeof projects)[number];
+export type User = (typeof users)[number];
+export type Company = (typeof companies)[number];
+export type Track = (typeof tracks)[number];
